@@ -1,4 +1,4 @@
-package incrocio.src.main.java.it.itispaleocapa.sonzognig;
+package it.itispaleocapa.sonzognig;
     
 import java.util.concurrent.Semaphore;
 import javax.swing.*;

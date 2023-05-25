@@ -1,4 +1,4 @@
-package incrocio.src.main.java.it.itispaleocapa.sonzognig;
+package it.itispaleocapa.sonzognig;
 import javax.swing.JLabel;
 import javax.swing.*;
 
