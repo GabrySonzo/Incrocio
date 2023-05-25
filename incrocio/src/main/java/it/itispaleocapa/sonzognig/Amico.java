@@ -63,7 +63,7 @@ public class Amico {
         boolean passato = true;
         try {
             while(passato){
-                eastSemaphore.acquire(); // Acquisisce il semaforo per la direzione est
+                eastSemaphore.acquire();
                 if(eastWest){
                     passato = false;
                     System.out.println("Auto " + carId + " proveniente da est in transito...");
@@ -72,14 +72,14 @@ public class Amico {
                         eastQueue[1].immagine.setLocation(360, y);
                     if(eastQueue[2]!=null)
                         eastQueue[2].immagine.setLocation(490, y);
-                    Thread.sleep(1000); // Simulazione del tempo di attraversamento dell'incrocio
+                    Thread.sleep(1000);
                     immagine.setLocation((x-260),y);
                     System.out.println("Auto " + carId + " proveniente da est ha lasciato l'incrocio");
                     eastQueue[0] = eastQueue[1];
                     eastQueue[1] = eastQueue[2];
                     eastQueue[2] = null;
                     eastAuto--;
-                    eastSemaphore.release(); // Rilascia il semaforo per la direzione est 
+                    eastSemaphore.release();
                     Thread.sleep(1000);
                     immagine.setLocation((x-390),y);
                     Thread.sleep(1000);
@@ -96,7 +96,7 @@ public class Amico {
         boolean passato = true;
         try {
             while(passato){
-                westSemaphore.acquire(); // Acquisisce il semaforo per la direzione est
+                westSemaphore.acquire();
                 if(eastWest){
                     passato = false;
                     System.out.println("Auto " + carId + " proveniente da ovest in transito...");
@@ -105,14 +105,14 @@ public class Amico {
                         westQueue[1].immagine.setLocation(100, y);
                     if(westQueue[2]!=null)
                         westQueue[2].immagine.setLocation(-30, y);
-                    Thread.sleep(1000); // Simulazione del tempo di attraversamento dell'incrocio
+                    Thread.sleep(1000);
                     immagine.setLocation((x+260),y);
                     System.out.println("Auto " + carId + " proveniente da ovest ha lasciato l'incrocio");
                     westQueue[0] = westQueue[1];
                     westQueue[1] = westQueue[2];
                     westQueue[2] = null;
                     westAuto--;
-                    westSemaphore.release(); // Rilascia il semaforo per la direzione est   
+                    westSemaphore.release();
                     Thread.sleep(1000);
                     immagine.setLocation((x+390), y);
                     Thread.sleep(1000);
@@ -129,7 +129,7 @@ public class Amico {
         boolean passato = true;
         try {
             while(passato){
-                northSemaphore.acquire(); // Acquisisce il semaforo per la direzione est
+                northSemaphore.acquire();
                 if(northSouth){
                     passato = false;
                     System.out.println("Auto " + carId + " proveniente da nord in transito...");
@@ -138,14 +138,14 @@ public class Amico {
                         northQueue[1].immagine.setLocation(x, 100);
                     if(northQueue[2]!=null)
                         northQueue[2].immagine.setLocation(x, -30);
-                    Thread.sleep(1000); // Simulazione del tempo di attraversamento dell'incrocio
+                    Thread.sleep(1000);
                     immagine.setLocation((x),(y+260));
                     System.out.println("Auto " + carId + " proveniente da nord ha lasciato l'incrocio");
                     northQueue[0] = northQueue[1];
                     northQueue[1] = northQueue[2];
                     northQueue[2] = null;
                     northAuto--;
-                    northSemaphore.release(); // Rilascia il semaforo per la direzione est   
+                    northSemaphore.release();
                     Thread.sleep(1000);
                     immagine.setLocation((x),(y+390));
                     Thread.sleep(1000);
@@ -162,7 +162,7 @@ public class Amico {
         boolean passato = true;
         try {
             while(passato){
-                southSemaphore.acquire(); // Acquisisce il semaforo per la direzione est
+                southSemaphore.acquire();
                 if(northSouth){
                     passato = false;
                     System.out.println("Auto " + carId + " proveniente da sud in transito...");
@@ -171,14 +171,14 @@ public class Amico {
                         southQueue[1].immagine.setLocation(x, 360);
                     if(southQueue[2]!=null)
                         southQueue[2].immagine.setLocation(x, 490);
-                    Thread.sleep(1000); // Simulazione del tempo di attraversamento dell'incrocio
+                    Thread.sleep(1000);
                     immagine.setLocation((x),(y-260));
                     System.out.println("Auto " + carId + " proveniente da sud ha lasciato l'incrocio");
                     southQueue[0] = southQueue[1];
                     southQueue[1] = southQueue[2];
                     southQueue[2] = null;
                     southAuto--;
-                    southSemaphore.release(); // Rilascia il semaforo per la direzione est 
+                    southSemaphore.release();
                     Thread.sleep(1000);
                     immagine.setLocation((x),(y-390));
                     Thread.sleep(1000);
